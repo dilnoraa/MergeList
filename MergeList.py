@@ -9,16 +9,14 @@ def merge(list_A, list_B):
     while i < len(list_A) and j < len(list_B):
         if list_A[i] < list_B[j]:
             list_C.append(list_A[i])
-            i = i + 1
+            i += 1
         else:
             list_C.append(list_B[j])
-            j = j + 1
+            j += 1
     if i < len(list_A):
-        for x in range(i, len(list_A)):
-            list_C.append(list_A[x])
+        list_C += list_A[i:]
     if j < len(list_B):
-        for x in range(i, len(list_B)):
-            list_C.append(list_B[x])
+        list_C += list_B[j:]
     return list_C
 
 
